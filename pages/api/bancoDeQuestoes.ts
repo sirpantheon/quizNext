@@ -1,6 +1,6 @@
 import QuestaoModel from "../../model/questao";
 import RespostaModel from "../../model/resposta";
-
+// aula 129
 const questoes: QuestaoModel[] = [
     new QuestaoModel(200,'Qual Animal Transmite a Doeança De Chagas?', [
 
