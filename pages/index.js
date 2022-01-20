@@ -1,12 +1,11 @@
-
-
-import styles from '../styles/Home.module.css'
 import Questao from '../components/questao'
-import questaoModel from '../model/questao'
+import QuestaoModel from '../model/questao'
 import RespostaModel from '../model/resposta'
 
 export default function Home() {
-  const Questaoteste = new questaoModel(1, "melhor cor?", [
+  
+  
+  const questaoteste = new QuestaoModel(1, "melhor cor?", [
       RespostaModel.errada("verde"),
       RespostaModel.errada("preto"),
       RespostaModel.errada("branco"),
@@ -15,6 +14,16 @@ export default function Home() {
 
 
   return (
-    <Questao valor={Questaoteste}/>
+
+    <div styles={{
+      display: "flex",
+      height: "100vh",
+      justifyContent: "center",
+      alignItems: "center",
+    }}>
+
+      <Questao valor={questaoteste}/>
+
+    </div>
   )
 }

@@ -1,0 +1,11 @@
+.enunciado{
+    display: flex;
+    height: 100vh;
+    justify-Content: center;
+    align-Items: center
+}
+
+.texto{
+    font-size: 2.5rem;
+    font-weight: 700
+}

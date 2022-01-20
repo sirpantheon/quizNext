@@ -18,7 +18,7 @@ export default class questaoModel{
         return this.#id;
     }
 
-    get ununciado(){
+    get enunciado(){
         return this.#ununciado;
     }
 
