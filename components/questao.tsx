@@ -1,24 +1,26 @@
-import questaoModel from "../model/questao"
+import QuestaoModel from "../model/questao"
 import styles from "../styles/Questao.module.css"
 import Enunciado from "./enunciado"
 import Resposta from "./resposta"
 
-interface questaoProps{
-    valor: questaoModel
+interface QuestaoProps{
+    valor: QuestaoModel
 }
 
-export default function questao(props: questaoProps){
+export default function questao(props: QuestaoProps){
     const questao = props.valor
 
     function renderizarResposta(){
         return questao.respostas.map((resposta,i) =>{
-            return <Resposta 
-            valor={resposta}
-            indice={i}
-            letra="A"
-            corLetra="#F2C866"
-            key={i}
-            />
+            return (
+                <Resposta 
+                    valor={resposta}
+                    indice={i}
+                    letra="A"
+                    corFundoLetra="#F2C866"
+                    key={i}
+                />
+            )
         })
     }
 

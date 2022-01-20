@@ -1,3 +1,34 @@
 .resposta{
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.frente, .verso{
+    display: flex;
+}
+
+.frente{
+    color: #000000;
+    border-radius: 20%;
+    padding: 1vw;
+    align-items: center;
+    background-color: #FFF;
+}
+
+.letra{
+    height: 6vh;
+    width: 3vw;
+    border-radius:50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-right: 2rem;
+}
+
+.valor{
+    font-weight: 700;
+    font-size: 1.3rem;
 }
