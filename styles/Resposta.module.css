@@ -1,16 +1,27 @@
 .resposta{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 80%;
+    min-width: 500px;
+    height: 100px;
+    margin:10px;
+}
+
+.conteudoResposta{
+    position: relative; 
+    display: flex;
+    flex: 1;
 }
 
 .frente, .verso{
+    position: absolute;
     display: flex;
+    height: 100%;
+    width: 100%;
 }
 
 .frente{
     color: #000000;
-    border-radius: 20%;
+    border-radius: 5%;
     padding: 1vw;
     align-items: center;
     background-color: #FFF;
