@@ -22,11 +22,32 @@
 }
 
 .frente{
-    color: #000000;
+    color: #000;
     border-radius: 1.5vw;
     padding: 2.5vw;
     align-items: center;
     background-color: #FFF;
+}
+
+.verso > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    border-radius: 1.5vw;    
+}
+
+.certa{
+    background-color: #2bAA6d;
+}
+
+.errada{
+    background-color: #E44;
+}
+
+.certa .valor, .errada .valor {
+    font-size: 2rem;
 }
 
 .letra{

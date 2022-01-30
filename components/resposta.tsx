@@ -18,20 +18,38 @@ export default function Resposta(props : RespostaProps){
 
             <div className={styles.conteudoResposta}>
 
-                <div className={styles.frente}>
+                {!resposta.revelada ? (
+                    <div className={styles.frente}>
 
-                    <div className={styles.letra} style={ {backgroundColor:props.corFundoLetra} }>
-                        {props.letra}
+                        <div className={styles.letra} style={ {backgroundColor:props.corFundoLetra} }>
+                            {props.letra}
+                        </div>
+
+                        <div className={styles.valor}>
+                            {resposta.valor}
+                        </div>
+
                     </div>
 
-                    <div className={styles.valor}>
-                        {resposta.valor}
+                ):(
+                    <div className={styles.verso}>
+                        {resposta.certa?(
+                            <div className={styles.certa}>
+                                <div>A Resposta Certa E...</div>
+                                <div className={styles.valor}>{resposta.valor}</div>
+                            </div>
+                        ):(
+                            <div className={styles.errada}>
+                                <div>A Resposta Esta Errada...</div>
+                                <div className={styles.valor}>{resposta.valor}</div>
+                            </div>
+                        )}
+                        
                     </div>
 
-                </div>
+                )}
+
                 
-                <div className={styles.verso}>
-                </div>
             </div>
         </div>
     )
