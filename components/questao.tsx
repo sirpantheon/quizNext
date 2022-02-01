@@ -2,6 +2,7 @@ import QuestaoModel from "../model/questao"
 import styles from "../styles/Questao.module.css"
 import Enunciado from "./enunciado"
 import Resposta from "./resposta"
+import Temporizador from "./temporizador"
 
 const letras = [
     {valor:'A', cor:'#F2C866'},
@@ -37,6 +38,7 @@ export default function questao(props: QuestaoProps){
         <div className={styles.questao}>
             
             <Enunciado texto={questao.enunciado}/>
+            <Temporizador />
             {renderizarResposta()}
 
         </div>
