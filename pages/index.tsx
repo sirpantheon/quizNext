@@ -1,9 +1,10 @@
 import Questao from '../components/questao'
 import QuestaoModel from '../model/questao'
 import RespostaModel from '../model/resposta';
+import Botao from '../components/botao';
 import {useState , useRef , useEffect} from 'react'
 
-//137
+//140
 const questaoteste = new QuestaoModel(1, "melhor cor?", [
     RespostaModel.errada("verde"),
     RespostaModel.errada("preto"),
@@ -33,10 +34,15 @@ export default function Home() {
     }
   }
 
-
   return (
 
-    <div>
+    <div style={{
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: '100vh'
+    }}>
 
       <Questao 
         valor={questao} 
@@ -44,6 +50,9 @@ export default function Home() {
         onResponse={onResponse}
         tempoEsgotado={tempoEsgotado}
       />
+      <Botao  texto={"proximo"} />
+
+      
 
     </div>
   )

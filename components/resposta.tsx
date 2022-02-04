@@ -22,7 +22,7 @@ export default function Resposta(props : RespostaProps){
                     <div className={styles.frente}>
 
                         <div className={styles.letra} style={ {backgroundColor:props.corFundoLetra} }>
-                            {props.letra}
+                            <div>{props.letra}</div>
                         </div>
 
                         <div className={styles.valor}>

@@ -1,7 +1,7 @@
 .enunciado{
     display: flex;
     width: 100vw;
-    height: 35vh;
+    height: 25vh;
     justify-Content: center;
     align-Items: center
 }

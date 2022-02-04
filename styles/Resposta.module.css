@@ -3,18 +3,21 @@
     align-items: center;
     justify-content: center;
     width: 80%;
-    height: 12vh;
+    height: 10vh;
     margin:0.5vw 0;
 }
 
 .conteudoResposta{
     position: relative; 
-    justify-content: space-around;
     display: flex;
     flex: 1;
+    align-items: center;
+    justify-content: center;
 }
 
-.frente, .verso {
+.frente{
+    color: #000;
+    background-color: #FFF;
     position: absolute;
     display: flex;
     height: 100%;
@@ -22,33 +25,46 @@
     border-radius: 1.5vw;
     align-items: center;
     justify-content: center;
-    padding: 2.5vw;
+    padding: 1.6vw;
     flex: 1; 
-}
 
-.frente{
-    color: #000;
-    background-color: #FFF;
 }
 
 .verso {
-    flex-direction: column;  
-     
+    flex-direction: column; 
+    position: absolute;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    border-radius: 1.5vw;
+    align-items: center;
+    justify-content: center;
+    padding: 3.5vh;
+    flex: 1;  
+
 }
 
 .certa{
     background-color: #2bAA6d;
+    width: 100%;
+    border-radius: 1.5vw;
+    padding: 0.1vw;
+    justify-content: space-around;
+    align-items: center;
+    display:flex;
+    flex-direction: column;
+
 }
 
 .errada{
     background-color: #E44;
-}
-
-.certa .valor, .errada .valor {
-    font-size: 2rem; 
-    display: flex;
-    flex: 1;
-    
+    width: 100%;
+    border-radius: 1.5vw;
+    padding: 0.1vw;
+    justify-content: space-around;
+    align-items: center;
+    display:flex;
+    flex-direction: column;
 }
 
 .letra{
@@ -60,11 +76,14 @@
     align-items: center;
     font-size: 1.3vw;
     font-weight: 700;
-    margin-right: 5rem;
     color: #FFF;
 }
 
 .valor{
     font-weight: 700;
     font-size: 1.3vw;
+    display: flex;
+    width: 95%;
+    justify-content: center;
+    align-items: center;
 }
