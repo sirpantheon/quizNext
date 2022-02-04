@@ -36,6 +36,10 @@ export default class questaoModel{
         return false;
     }
 
+    get naoRespondida(){
+        return !this.respondida
+    }
+
 
 
     embalaralharRespostas():questaoModel{
