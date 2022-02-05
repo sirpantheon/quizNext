@@ -1,8 +1,7 @@
-import Questao from '../components/questao'
 import QuestaoModel from '../model/questao'
 import RespostaModel from '../model/resposta';
-import Botao from '../components/botao';
 import {useState , useRef , useEffect} from 'react'
+import Questionario from '../components/Questionario';
 
 //140
 const questaoteste = new QuestaoModel(1, "melhor cor?", [
@@ -21,18 +20,11 @@ export default function Home() {
     questaoRef.current = questao
   }, [questao])
 
-  function onResponse(indice: number){
-    setQuestao(questao.responderCom(indice))
-    console.log(indice)
+  function onResponse(questao:QuestaoModel){
+
   }
 
-  function tempoEsgotado(){
-
-    if(questaoRef.current.naoRespondida){
-      setQuestao(questaoRef.current.responderCom(-1))
-
-    }
-  }
+  function irPraProximoPasso(){}
 
   return (
 
@@ -44,13 +36,12 @@ export default function Home() {
       height: '100vh'
     }}>
 
-      <Questao 
-        valor={questao} 
-        tempoPraResposta={15}
-        onResponse={onResponse}
-        tempoEsgotado={tempoEsgotado}
-      />
-      <Botao  texto={"proximo"} />
+    <Questionario 
+      questao={questao}
+      ultima={true}
+      onResponse={onResponse}
+      irPraProximoPasso={irPraProximoPasso}
+    />
 
       
 

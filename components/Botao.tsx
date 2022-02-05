@@ -20,9 +20,9 @@ export default function botao(props:BotaoProps){
 
 
     return props.href ?(
-        <link href={props.href}>
+        <Link href={props.href}>
             {renderizarBotao()}
-        </link>
+        </Link>
     ) : renderizarBotao()
     
 }
