@@ -1,15 +1,15 @@
 import { embaralhar } from "../functions/arrays"
-import respostaModel from "./resposta"
+import RespostaModel from "./resposta"
 
-export default class questaoModel{
+export default class QuestaoModel{
     #id:number
-    #ununciado:string
-    #respostas: respostaModel[]
+    #enunciado:string
+    #respostas: RespostaModel[]
     #acertou: boolean
 
-    constructor(id:number, ununciado:string, respostas:respostaModel[], acertou = false){
+    constructor(id:number, ununciado:string, respostas:RespostaModel[], acertou = false){
         this.#id = id;
-        this.#ununciado = ununciado;
+        this.#enunciado = ununciado;
         this.#respostas = respostas;
         this.#acertou = acertou;
     }
@@ -19,7 +19,7 @@ export default class questaoModel{
     }
 
     get enunciado(){
-        return this.#ununciado;
+        return this.#enunciado;
     }
 
     get respostas(){
@@ -42,26 +42,33 @@ export default class questaoModel{
 
 
 
-    embalaralharRespostas():questaoModel{
+    embalaralharRespostas():QuestaoModel{
         let respostasEmbaralhadas = embaralhar(this.#respostas)
-        return new questaoModel(this.#id, this.#ununciado, respostasEmbaralhadas, this.#acertou)
+        return new QuestaoModel(this.#id, this.#enunciado, respostasEmbaralhadas, this.#acertou)
     }
 
-    responderCom(indice: number): questaoModel{
+    responderCom(indice: number): QuestaoModel{
         const acertou = this.#respostas[indice]?.certa
         const respostas = this.#respostas.map((resp,i) => {
             const respostaSelecionada = indice === i;
             const deveRevelar = respostaSelecionada || resp.certa
             return deveRevelar ? resp.revelar() : resp
         })
-        return new questaoModel(this.#id,this.#ununciado,respostas,acertou)
+        return new QuestaoModel(this.#id,this.#enunciado,respostas, acertou)
     }
 
+
+    static criarUsandoObjeto(obj : QuestaoModel ): QuestaoModel{
+
+        const respostas = obj.respostas.map(resp => RespostaModel.criarUsandoObjeto(resp))
+
+        return new QuestaoModel(obj.id ,obj.enunciado , respostas , obj.acertou)
+    }
 
     toObject(){
         return{
             id:this.#id,
-            ununciado:this.#ununciado,
+            enunciado:this.#enunciado,
             respostas: this.#respostas.map(resp =>resp.toObject()) ,
             acertou: this.#acertou,
             respondida: this.respondida
